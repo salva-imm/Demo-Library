@@ -10,10 +10,10 @@ from books.models import Book
 
 class BookInstance(models.Model):
     book = models.ForeignKey(Book, related_name='book_instances', on_delete=DO_NOTHING)
-    amval_code = models.IntegerField()
+    amval_code = models.IntegerField(unique=True)
 
 
-class ReservedBook(models.Model):
+class BorrowedBook(models.Model):
     book = models.ForeignKey(BookInstance, on_delete=DO_NOTHING)
     user = models.ForeignKey(User, on_delete=DO_NOTHING)
     created_at = models.DateTimeField(default=now)
