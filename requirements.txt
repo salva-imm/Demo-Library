@@ -2,3 +2,4 @@ Django==3.2
 djangorestframework
 Faker
 model_bakery
+django-queryset-csv==1.1.0
