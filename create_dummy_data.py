@@ -1,7 +1,7 @@
 import os
 from random import randint
 
-os.environ.setdefault("DJANGO_SETTINGS_MODULE", "interview.settings")
+os.environ.setdefault("DJANGO_SETTINGS_MODULE", "library.settings")
 
 import django
 
