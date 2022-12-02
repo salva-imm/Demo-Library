@@ -14,7 +14,7 @@ class BookInstance(models.Model):
 
 
 class BorrowedBook(models.Model):
-    book = models.ForeignKey(BookInstance, on_delete=DO_NOTHING)
+    book = models.ForeignKey(BookInstance, related_name='borrowed_book', on_delete=DO_NOTHING)
     user = models.ForeignKey(User, on_delete=DO_NOTHING)
     created_at = models.DateTimeField(default=now)
     reserved_for_days = models.IntegerField(default=7)

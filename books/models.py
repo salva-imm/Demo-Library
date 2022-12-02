@@ -32,7 +32,7 @@ class BookReview(models.Model):
     review = models.TextField(null=True, blank=True)
     user = models.ForeignKey(User, on_delete=CASCADE)
     score = models.SmallIntegerField(choices=Scores.choices)
-    book = models.ForeignKey(Book, on_delete=CASCADE)
+    book = models.ForeignKey(Book, related_name='book_review', on_delete=CASCADE)
 
     class Meta:
         unique_together = [['user', 'book']]
